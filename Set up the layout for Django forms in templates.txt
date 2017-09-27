@@ -1,0 +1,34 @@
+URL: https://www.webforefront.com/django/formtemplatelayout.html
+
+Table 6-4. Django form field attributes accessible in templates
+Attribute name	Description
+{{form.<field_name>}} (i.e. No attribute, just the field name by itself)
+Outputs the HTML form tag -- technically known as the Django widget -- associated with the field (e.g. <input type="text">)
+{{form.<field_name>.name}}
+Outputs the name of a field, as defined in the form class.
+{{form.<field_name>.value}}
+Outputs the value of the field assigned with initial or user provided data. Useful if you need to separately output the HTML form tag's value attribute (e.g. for <input type="text" name="name" value="John Doe">, {{form.name.value}} outputs John Doe)
+{{form.<field_name>.label}}
+Outputs the label of a field, which by default uses the syntax "Your <field_name>" (e.g. for the email field, {{form.email.label}} outputs Your email).
+{{form.<field_name>.id_for_label}}
+Outputs the label id of a field, which by default uses the syntax id_<field_name> (e.g. for the email field, {{form.email.id_for_label}} outputs id_email).
+{{form.<field_name>.auto_id}}
+Outputs the auto id of a field, which by default uses the syntax id_<field_name> (e.g. for the email field, {{form.email.auto_id}} outputs id_email).
+{{form.<field_name>.label_tag}}
+Helper method to output the HTML <label> tag along with id_for_label and label(e.g. for the email field, {{form.email.label_tag}} outputs <label for="id_email">Your email:</label>).
+{{form.<field_name>.help_text}}
+Outputs the help text associated with a field.
+{{form.<field_name>.errors}}
+Outputs the errors associated with a field.
+{{form.<field_name>.css_classes}}
+Outputs the CSS classes associated with a field.
+{{form.<field_name>.as_hidden}}
+Outputs the HTML of a field as a hidden HTML field (e.g. <input type="hidden" >)
+{{form.<field_name>.is_hidden}}
+Boolean result of a field's hidden status.
+{{form.<field_name>.as_text}}
+Outputs the HTML of a field as a text HTML field (e.g. <input type="text">)
+{{form.<field_name>.as_textarea}}
+Outputs the HTML of a field as a textarea HTML field (e.g. <textarea></textarea>)
+{{form.<field_name>.as_widget}}
+Outputs the Django widget associated with a field; technically produces the same output as calling the standalone field with the syntax {{form.<field_name>}} -- shown at the top of this table.
